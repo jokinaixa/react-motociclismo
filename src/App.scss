@@ -1,0 +1,35 @@
+@import "./Variables.scss";
+
+body {
+  padding: 15px;
+  background-color: $mutedColor;
+
+  ul {
+    display: table;
+    width: 100%;
+    background-color: yellow;
+
+    li {
+      background-color: pink;
+    }
+  }
+
+  button {
+    display: block;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  
+    &.bg-primary {
+      background-color: $primaryColor;
+      font-size: $fontsizeinput;
+      color: $white;
+    }
+  
+    &.bg-danger {
+      background-color: $dangerColor;
+      font-size: $fontsizeinput;
+      color: $white;
+    }
+  }
+}

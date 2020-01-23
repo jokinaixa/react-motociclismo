@@ -1,0 +1,10 @@
+@import '../Variables.scss';
+
+input, select {
+  display: block;
+  font-size: $fontsizeinput;
+  margin-bottom: 20px;
+  padding: 6px;
+  border: 1px solid $grey;
+  border-radius: 4px;
+}

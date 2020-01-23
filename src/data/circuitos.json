@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "nombre": "GP de Jerez",
+    "fecha": "20190503",
+    "longitud": 5400
+  },
+  {
+    "id": 1,
+    "nombre": "GP de Catalunya",
+    "fecha": "20190706",
+    "longitud": 5100
+  },
+  {
+    "id": 2,
+    "nombre": "GP de la C. Valenciana",
+    "fecha": "20190914",
+    "longitud": 5600
+  }
+]
