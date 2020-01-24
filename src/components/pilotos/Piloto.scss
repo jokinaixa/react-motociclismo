@@ -1,16 +1,1 @@
 @import '../../Variables.scss';
-
-li {
-  float: left;
-  width: 25%;
-  list-style-type: none;
-  background-color: cian;
-
-  .tarjeta {
-    padding: 15px;
-    margin: 15px;
-    background-color: $greyLight;
-    border: 1px solid $grey;
-    border-radius: 10px;
-  }
-}

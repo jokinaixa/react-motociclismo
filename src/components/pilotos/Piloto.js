@@ -9,8 +9,8 @@ class Piloto extends Component {
 
     return <li>
       <div className="tarjeta">
+        <div className="fondoImg"><img src={ piloto.imagen } alt={ piloto.nombre } /></div>
         <h2 style={ btnTitulo }>{ piloto.nombre } { piloto.apellido }</h2> 
-        <h6>{ piloto.pais }</h6>
       </div>
     </li>
   }

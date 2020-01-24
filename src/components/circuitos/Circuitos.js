@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './Circuitos.scss';
 
 import Circuito from './Circuito';
 
@@ -19,8 +20,8 @@ class Circuitos extends Component {
     return <div>
       <Link to="/">Home</Link><br/>
       <Link to="/pilotos">Pilotos</Link>
-      <h1>Circuitos</h1>
-      <ul style={ listado }>
+      <h1>{ this.state.circuitos.length } Circuitos</h1>
+      <ul className="listado">
         { this.state.circuitos.map(circuito => 
           <Circuito 
             circuito={ circuito } 
@@ -30,10 +31,6 @@ class Circuitos extends Component {
       </ul>
     </div>
   }
-}
-
-const listado = {
-  padding: '0px'
 }
 
 export default Circuitos

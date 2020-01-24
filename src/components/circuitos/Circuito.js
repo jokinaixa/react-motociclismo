@@ -15,6 +15,7 @@ class Circuito extends Component {
 
     return <li>
       <div className="tarjeta">
+        <div className="fondoImg"><img src={ circuito.imagen } alt={ circuito.nombre } /></div>
         <h2 style={ btnTitulo }>{ circuito.nombre }</h2> 
         <h6 style={ this.StyleLongitud() }>{ circuito.longitud }  metros</h6>
       </div>

@@ -2,34 +2,56 @@
 
 body {
   padding: 15px;
-  background-color: $mutedColor;
+  background-color: $greyLight;
+  font-size: 16px;
+}
 
-  ul {
-    display: table;
-    width: 100%;
-    background-color: yellow;
+ul.listado {
+  display: table;
+  padding: 0;
+  width: 100%;
 
-    li {
-      background-color: pink;
+  li {
+    float: left;
+    width: 25%;
+    padding: 15px 15px 0 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    
+    .tarjeta {
+      padding: 15px;
+      background-color: $white;
+      border: 1px solid $grey;
+      border-radius: 10px;
+      text-align: center;
+
+      .fondoImg {
+        min-height: 230px;
+
+        img {
+          width: 200px;
+          height: auto;
+        }
+      }
     }
   }
+}
 
-  button {
-    display: block;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-  
-    &.bg-primary {
-      background-color: $primaryColor;
-      font-size: $fontsizeinput;
-      color: $white;
-    }
-  
-    &.bg-danger {
-      background-color: $dangerColor;
-      font-size: $fontsizeinput;
-      color: $white;
-    }
+button {
+  display: block;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  &.bg-primary {
+    background-color: $primaryColor;
+    font-size: $fontsizeinput;
+    color: $white;
+  }
+
+  &.bg-danger {
+    background-color: $dangerColor;
+    font-size: $fontsizeinput;
+    color: $white;
   }
 }
