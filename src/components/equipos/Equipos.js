@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import "./Pilotos.scss";
+import "./Equipos.scss";
 
-import Piloto from "./Piloto";
-import pilotosData from "../../data/pilotos.json";
+import Equipo from "./Equipo";
+import equiposData from "../../data/equipos.json";
 import categoriasData from "../../data/categorias.json";
 
-class Pilotos extends Component {
+class Equipos extends Component {
   cat = "MotoGP";
 
   state = {
-    pilotos: [],
+    equipos: [],
     categorias: []
   };
 
@@ -20,16 +20,14 @@ class Pilotos extends Component {
 
   filtrar = categoria => {
     this.cat = categoria;
-    const data = pilotosData.filter(
-      element => element.equipo.categoria === categoria
-    );
-    this.setState({ pilotos: data });
+    const data = equiposData.filter(element => element.categoria === categoria);
+    this.setState({ equipos: data });
   };
 
   render() {
     return (
       <div>
-        <h1>{this.state.pilotos.length} Pilotos</h1>
+        <h1>{this.state.equipos.length} Equipos</h1>
         <ul className="categoria list-inline">
           {this.state.categorias.map((categoria, index) => (
             <li
@@ -42,8 +40,8 @@ class Pilotos extends Component {
           ))}
         </ul>
         <ul className="listado">
-          {this.state.pilotos.map(piloto => (
-            <Piloto piloto={piloto} key={piloto.id} />
+          {this.state.equipos.map(equipo => (
+            <Equipo equipo={equipo} key={equipo.id} />
           ))}
         </ul>
       </div>
@@ -51,4 +49,4 @@ class Pilotos extends Component {
   }
 }
 
-export default Pilotos;
+export default Equipos;

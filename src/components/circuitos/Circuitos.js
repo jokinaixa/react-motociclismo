@@ -1,36 +1,37 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './Circuitos.scss';
+import React, { Component } from "react";
+import "./Circuitos.scss";
 
-import Circuito from './Circuito';
+import Circuito from "./Circuito";
+import circuitosData from "../../data/circuitos.json";
 
 class Circuitos extends Component {
-
   state = {
-    circuitos: [],
-  }
+    circuitos: []
+  };
 
   async componentDidMount() {
-    const res = await fetch('http://localhost:8080/api/obtenerCircuitos.php')
-    const data = await res.json();
+    // HTTP
+    //const res = await fetch('http://localhost:8080/api/obtenerCircuitos.php')
+    //const data = await res.json();
+
+    // JSON
+    const data = await circuitosData;
+
     this.setState({ circuitos: data });
   }
 
   render() {
-    return <div>
-      <Link to="/">Home</Link><br/>
-      <Link to="/pilotos">Pilotos</Link>
-      <h1>{ this.state.circuitos.length } Circuitos</h1>
-      <ul className="listado">
-        { this.state.circuitos.map(circuito => 
-          <Circuito 
-            circuito={ circuito } 
-            key={ circuito.id }
-          />)
-        }
-      </ul>
-    </div>
+    return (
+      <div>
+        <h1>{this.state.circuitos.length} Circuitos</h1>
+        <ul className="listado">
+          {this.state.circuitos.map(circuito => (
+            <Circuito circuito={circuito} key={circuito.id} />
+          ))}
+        </ul>
+      </div>
+    );
   }
 }
 
-export default Circuitos
+export default Circuitos;
