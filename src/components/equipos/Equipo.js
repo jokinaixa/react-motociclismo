@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Equipo.scss";
 
+import PilotosEquipo from "../pilotos/PilotosEquipo";
+
 class Equipo extends Component {
   render() {
     const { equipo } = this.props;
@@ -13,6 +15,7 @@ class Equipo extends Component {
             <img src={equipo.imagen} alt={equipo.nombre} />
           </div>
           <h2 style={titulo}>{equipo.nombre}</h2>
+          <PilotosEquipo equipoId={equipo.id} />
         </div>
       </li>
     );

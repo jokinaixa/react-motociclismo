@@ -15,7 +15,7 @@ class App extends Component {
             path="/"
             render={() => {
               return (
-                <div>
+                <div className="portada">
                   <Link to="/">Home</Link>
                   <ul className="menu list-inline">
                     <li>
@@ -32,7 +32,6 @@ class App extends Component {
               );
             }}
           />
-
           <Route path="/circuitos" component={Circuitos} />
           <Route path="/equipos" component={Equipos} />
           <Route path="/pilotos" component={Pilotos} />
