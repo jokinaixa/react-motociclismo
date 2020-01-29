@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import Equipo from "./Equipo";
-//import equiposData from "../../data/equipos.json";
+
+import equiposData from "../../data/equipos.json";
 import categoriasData from "../../data/categorias.json";
 
 class Equipos extends Component {
@@ -20,8 +21,8 @@ class Equipos extends Component {
   async filtrar(categoria) {
     this.cat = categoria;
 
-    const res = await fetch(`http://localhost:8080/api/obtenerEquipos.php`);
-    const equiposData = await res.json();
+    //const res = await fetch(`http://localhost:8080/api/obtenerEquipos.php`);
+    //const equiposData = await res.json();
 
     const data = equiposData.filter(element => element.categoria === categoria);
     this.setState({ equipos: data });

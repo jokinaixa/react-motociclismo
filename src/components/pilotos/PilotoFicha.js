@@ -10,10 +10,10 @@ class PilotoFicha extends Component {
     imagen: "",
     nombre: "",
     apellido: "",
-    dorsal: null,
-    fecha: Date,
+    dorsal: "",
+    fecha: "",
     pais: "",
-    edad: null,
+    edad: "",
     equipo: []
   };
 
@@ -24,8 +24,6 @@ class PilotoFicha extends Component {
       `http://localhost:8080/api/mostrarPiloto.php?id=${pilotoId}`
     );
     const data = await res.json();
-
-    console.log(data);
 
     this.setState({
       id: pilotoId,
@@ -57,7 +55,7 @@ class PilotoFicha extends Component {
               <label className="col-3 col-form-label">Dorsal</label>
               <div className="col-9">
                 <input
-                  type="number"
+                  type="text"
                   readOnly
                   className="form-control-plaintext"
                   value={this.state.dorsal}
@@ -68,7 +66,7 @@ class PilotoFicha extends Component {
               <label className="col-3 col-form-label">Fecha</label>
               <div className="col-9">
                 <input
-                  type="date"
+                  type="text"
                   readOnly
                   className="form-control-plaintext"
                   value={this.state.fecha}
@@ -90,7 +88,7 @@ class PilotoFicha extends Component {
               <label className="col-3 col-form-label">Edad</label>
               <div className="col-9">
                 <input
-                  type="number"
+                  type="text"
                   readOnly
                   className="form-control-plaintext"
                   value={this.state.edad}

@@ -13,18 +13,22 @@ class Pilotos extends Component {
     categorias: []
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     this.filtrar(this.cat);
     this.setState({ categorias: categoriasData });
   }
 
-  filtrar = categoria => {
+  async filtrar(categoria) {
     this.cat = categoria;
+
+    //const res = await fetch(`http://localhost:8080/api/obtenerPilotos.php`);
+    //const pilotosData = await res.json();
+
     const data = pilotosData.filter(
       element => element.equipo.categoria === categoria
     );
     this.setState({ pilotos: data });
-  };
+  }
 
   render() {
     return (
