@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Equipos.scss";
 
 import Equipo from "./Equipo";
 //import equiposData from "../../data/equipos.json";
@@ -32,22 +31,34 @@ class Equipos extends Component {
     return (
       <div>
         <h1>{this.state.equipos.length} Equipos</h1>
-        <ul className="categoria list-inline">
+        <hr />
+        <ul className="nav nav-pills">
           {this.state.categorias.map((categoria, index) => (
-            <li
-              className={categoria === this.cat ? "active" : ""}
-              onClick={() => this.filtrar(categoria)}
-              key={index}
-            >
-              {categoria}
+            <li className="nav-item" key={index}>
+              <a
+                href="false"
+                style={{ cursor: "pointer" }}
+                className={
+                  categoria === this.cat ? "nav-link active" : "nav-link"
+                }
+                onClick={e => {
+                  e.preventDefault();
+                  this.filtrar(categoria);
+                }}
+              >
+                {categoria}
+              </a>
             </li>
           ))}
         </ul>
-        <ul className="listado">
+        <br />
+        <div className="row row-cols-1 row-cols-md-3">
           {this.state.equipos.map(equipo => (
-            <Equipo equipo={equipo} key={equipo.id} />
+            <div className="col mb-4" key={equipo.id}>
+              <Equipo equipo={equipo} />
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     );
   }

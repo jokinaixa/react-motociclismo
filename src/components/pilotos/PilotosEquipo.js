@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./PilotosEquipo.scss";
 
 class PilotosEquipo extends Component {
   state = {
@@ -8,18 +7,20 @@ class PilotosEquipo extends Component {
   };
 
   async componentDidMount() {
-    const equipoId = this.props.equipoId;
+    const { equipoId } = this.props.equipoId;
+
     const res = await fetch(
       `http://localhost:8080/api/obtenerPilotosPorEquipo.php?equipo=${equipoId}`
     );
     const data = await res.json();
+
     this.setState({ pilotos: data });
   }
 
   render() {
     return (
       <div>
-        <table border="1">
+        <table className="table table-dark">
           <thead>
             <tr>
               <th>Pilotos</th>
@@ -31,7 +32,9 @@ class PilotosEquipo extends Component {
             {this.state.pilotos.map(piloto => (
               <tr key={piloto.id}>
                 <td>
-                  {piloto.nombre} {piloto.apellido}
+                  <Link to={{ pathname: `/pilotoFicha/${piloto.id}` }}>
+                    {piloto.nombre} {piloto.apellido.toUpperCase()}
+                  </Link>
                 </td>
                 <td>{piloto.pais}</td>
               </tr>

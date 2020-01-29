@@ -1,23 +1,23 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Equipo.scss";
-
-import PilotosEquipo from "../pilotos/PilotosEquipo";
 
 class Equipo extends Component {
   render() {
     const { equipo } = this.props;
 
     return (
-      <li>
-        <div className="tarjeta">
-          <div className="fondoImg">
-            <img src={equipo.imagen} alt={equipo.nombre} />
-          </div>
-          <h2 style={titulo}>{equipo.nombre}</h2>
-          <PilotosEquipo equipoId={equipo.id} />
+      <div className="card">
+        <img src={equipo.imagen} alt={equipo.nombre} className="card-img-top" />
+        <div className="card-body">
+          <h5 className="card-title text-center" style={titulo}>
+            <Link to={{ pathname: `/equipoFicha/${equipo.id}` }}>
+              {equipo.nombre}
+            </Link>
+          </h5>
         </div>
-      </li>
+      </div>
     );
   }
 }
@@ -28,7 +28,7 @@ Equipo.propType = {
 
 const titulo = {
   fontStyle: "italic",
-  color: "#dfdfdf"
+  color: "#c4c2bd"
 };
 
 export default Equipo;

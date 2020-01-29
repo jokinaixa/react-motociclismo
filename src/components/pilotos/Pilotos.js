@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./Pilotos.scss";
 
 import Piloto from "./Piloto";
+
 import pilotosData from "../../data/pilotos.json";
 import categoriasData from "../../data/categorias.json";
 
@@ -30,22 +30,34 @@ class Pilotos extends Component {
     return (
       <div>
         <h1>{this.state.pilotos.length} Pilotos</h1>
-        <ul className="categoria list-inline">
+        <hr />
+        <ul className="nav nav-pills">
           {this.state.categorias.map((categoria, index) => (
-            <li
-              className={categoria === this.cat ? "active" : ""}
-              onClick={() => this.filtrar(categoria)}
-              key={index}
-            >
-              {categoria}
+            <li className="nav-item" key={index}>
+              <a
+                href="false"
+                style={{ cursor: "pointer" }}
+                className={
+                  categoria === this.cat ? "nav-link active" : "nav-link"
+                }
+                onClick={e => {
+                  e.preventDefault();
+                  this.filtrar(categoria);
+                }}
+              >
+                {categoria}
+              </a>
             </li>
           ))}
         </ul>
-        <ul className="listado">
+        <br />
+        <div className="row row-cols-1 row-cols-md-3">
           {this.state.pilotos.map(piloto => (
-            <Piloto piloto={piloto} key={piloto.id} />
+            <div className="col mb-4" key={piloto.id}>
+              <Piloto piloto={piloto} />
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     );
   }

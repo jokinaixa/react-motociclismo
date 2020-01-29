@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Circuitos.scss";
 
 import Circuito from "./Circuito";
 import circuitosData from "../../data/circuitos.json";
@@ -24,11 +23,14 @@ class Circuitos extends Component {
     return (
       <div>
         <h1>{this.state.circuitos.length} Circuitos</h1>
-        <ul className="listado">
+        <hr />
+        <div className="row row-cols-1 row-cols-md-4">
           {this.state.circuitos.map(circuito => (
-            <Circuito circuito={circuito} key={circuito.id} />
+            <div className="col mb-3" key={circuito.id}>
+              <Circuito circuito={circuito} />
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     );
   }
