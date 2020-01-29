@@ -1,31 +1,25 @@
 import React, { Component } from "react";
 
 import Piloto from "./Piloto";
+import Categorias from "../Categorias";
 
 import pilotosData from "../../data/pilotos.json";
-import categoriasData from "../../data/categorias.json";
 
 class Pilotos extends Component {
-  cat = "MotoGP";
-
   state = {
-    pilotos: [],
-    categorias: []
+    pilotos: []
   };
 
   componentDidMount() {
-    this.filtrar(this.cat);
-    this.setState({ categorias: categoriasData });
+    this.filtrar("MotoGP");
   }
 
   async filtrar(categoria) {
-    this.cat = categoria;
-
     //const res = await fetch(`http://localhost:8080/api/obtenerPilotos.php`);
     //const pilotosData = await res.json();
 
     const data = pilotosData.filter(
-      element => element.equipo.categoria === categoria
+      piloto => piloto.equipo.categoria === categoria
     );
     this.setState({ pilotos: data });
   }
@@ -35,25 +29,7 @@ class Pilotos extends Component {
       <div>
         <h1>{this.state.pilotos.length} Pilotos</h1>
         <hr />
-        <ul className="nav nav-pills">
-          {this.state.categorias.map((categoria, index) => (
-            <li className="nav-item" key={index}>
-              <a
-                href="false"
-                style={{ cursor: "pointer" }}
-                className={
-                  categoria === this.cat ? "nav-link active" : "nav-link"
-                }
-                onClick={e => {
-                  e.preventDefault();
-                  this.filtrar(categoria);
-                }}
-              >
-                {categoria}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <Categorias filtrar={this.filtrar} />
         <br />
         <div className="row row-cols-1 row-cols-md-3">
           {this.state.pilotos.map(piloto => (

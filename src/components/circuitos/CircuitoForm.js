@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import './CircuitoForm.scss';
 
 export default class CircuitoForm extends Component {
 
   state = {
     nombre: '',
-    distancia: ''
+    longitud: ''
   }
 
   enviar = (e) => {
     e.preventDefault();
-    this.props.addCircuito(this.state.nombre, this.state.distancia);
+    this.props.addCircuito(this.state.nombre, this.state.longitud);
     this.setState({
       nombre: '',
-      distancia: ''
+      longitud: ''
     });
   }
 
@@ -33,13 +32,15 @@ export default class CircuitoForm extends Component {
           onChange={ this.cambio } 
           value={ this.state.nombre }
         />
+        <br/>
         <input 
           type="number" 
-          name="distancia"
+          name="longitud"
           placeholder="longitud" 
           onChange={ this.cambio } 
-          value={ this.state.distancia }
+          value={ this.state.longitud }
         />
+        <br/>
         <button type="submit" className="bg-primary">Enviar</button>
       </form>
     )

@@ -10,13 +10,8 @@ class Categorias extends Component {
   };
 
   async componentDidMount() {
-    this.filtrar(this.cat);
     this.setState({ categorias: categoriasData });
   }
-
-  filtrar = categoria => {
-    this.cat = categoria;
-  };
 
   render() {
     return (
@@ -29,9 +24,9 @@ class Categorias extends Component {
               className={
                 categoria === this.cat ? "nav-link active" : "nav-link"
               }
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
-                this.filtrar(categoria);
+                this.props.filtrar(categoria);
               }}
             >
               {categoria}

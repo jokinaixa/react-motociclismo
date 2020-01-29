@@ -24,6 +24,12 @@ class Circuito extends Component {
           <p className="card-text" style={this.StyleLongitud()}>
             {circuito.longitud} metros
           </p>
+          <button
+            className="btn btn-danger"
+            onClick={this.props.deleteCircuito.bind(this, circuito.idcategoria)}
+          >
+          Borrar
+          </button>
         </div>
       </div>
     );
