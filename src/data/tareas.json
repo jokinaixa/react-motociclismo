@@ -1,17 +1,21 @@
 [
   {
     "id": 0,
-    "titulo": "titulo00",
-    "descripcion": "Descripcion00"
+    "circuito": "Titulo 00",
+    "categoria": "MotoGP",
+    "piloto": 12,
+    "posicion": 4
   },
   {
     "id": 1,
-    "titulo": "titulo01",
-    "descripcion": "Descripcion01"
+    "titulo": "Titulo 01",
+    "descripcion": "Descripción 01",
+    "circuito": 8
   },
   {
     "id": 2,
-    "titulo": "titulo02",
-    "descripcion": "Descripcion02"
+    "titulo": "Titulo 02",
+    "descripcion": "Descripción 02",
+    "circuito": 4
   }
 ]

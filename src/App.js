@@ -9,7 +9,7 @@ import Equipos from "./components/equipos/Equipos";
 import EquipoFicha from "./components/equipos/EquipoFicha";
 import Pilotos from "./components/pilotos/Pilotos";
 import PilotoFicha from "./components/pilotos/PilotoFicha";
-import Tareas from "./components/Tareas/Tareas";
+import Tareas from "./components/tareas/Tareas";
 
 class App extends Component {
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
           <Route path="/equipoFicha/:equipoId" component={EquipoFicha} />
           <Route path="/pilotos" component={Pilotos} />
           <Route path="/pilotoFicha/:pilotoId" component={PilotoFicha} />
-          <Route path="/tareas" component={Tareas} />
+          <Route path="/clasificaciones/:circuito" component={Tareas} />
         </Router>
       </div>
     );

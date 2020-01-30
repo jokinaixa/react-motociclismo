@@ -36,11 +36,6 @@ class Cabecera extends Component {
                 Pilotos
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/tareas" className="nav-link">
-                Tareas
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>

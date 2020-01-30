@@ -1,57 +1,39 @@
 import React, { Component } from "react";
 
+import Categorias from "../Categorias";
 import Piloto from "./Piloto";
 
 import pilotosData from "../../data/pilotos.json";
-import categoriasData from "../../data/categorias.json";
 
 class Pilotos extends Component {
   cat = "MotoGP";
 
   state = {
-    pilotos: []
+    pilotos: pilotosData
   };
 
   componentDidMount() {
     this.filtrar(this.cat);
   }
 
-  async filtrar(categoria) {
+  filtrar = async categoria => {
     this.cat = categoria;
 
     //const res = await fetch(`http://localhost:8080/api/obtenerPilotos.php`);
     //const pilotosData = await res.json();
 
     const data = pilotosData.filter(
-      element => element.equipo.categoria === categoria
+      piloto => piloto.equipo.categoria === categoria
     );
     this.setState({ pilotos: data });
-  }
+  };
 
   render() {
     return (
       <div>
         <h1>{this.state.pilotos.length} Pilotos</h1>
         <hr />
-        <ul className="nav nav-pills">
-          {categoriasData.map((categoria, index) => (
-            <li className="nav-item" key={index}>
-              <a
-                href="false"
-                style={{ cursor: "pointer" }}
-                className={
-                  categoria === this.cat ? "nav-link active" : "nav-link"
-                }
-                onClick={e => {
-                  e.preventDefault();
-                  this.filtrar(categoria);
-                }}
-              >
-                {categoria}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <Categorias filtrar={this.filtrar} cat={this.cat} />
         <br />
         <div className="row row-cols-1 row-cols-md-3">
           {this.state.pilotos.map(piloto => (

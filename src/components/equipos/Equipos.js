@@ -9,24 +9,22 @@ class Equipos extends Component {
   cat = "MotoGP";
 
   state = {
-    equipos: []
+    equipos: equiposData
   };
 
   componentDidMount() {
     this.filtrar(this.cat);
   }
 
-  async filtrar(categoria) {
+  filtrar = async categoria => {
     this.cat = categoria;
 
     //const res = await fetch(`http://localhost:8080/api/obtenerEquipos.php`);
     //const equiposData = await res.json();
 
-    console.log("kk3");
-
     const data = equiposData.filter(equipo => equipo.categoria === categoria);
     this.setState({ equipos: data });
-  }
+  };
 
   render() {
     return (

@@ -11,7 +11,6 @@ class Categorias extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.filtrar.bind(this, "Moto3")}>Moto3</button>
         <ul className="nav nav-pills">
           {categoriasData.map((categoria, index) => (
             <li className="nav-item" key={index}>
@@ -22,9 +21,7 @@ class Categorias extends Component {
                   categoria === this.props.cat ? "nav-link active" : "nav-link"
                 }
                 onClick={e => {
-                  console.log("kk1");
                   e.preventDefault();
-                  console.log("kk2");
                   this.filtrar(categoria);
                 }}
               >

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Circuito.scss";
 
@@ -20,7 +21,11 @@ class Circuito extends Component {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">{circuito.nombre}</h5>
+          <h5 className="card-title">
+            <Link to={{ pathname: `/clasificaciones/${circuito.id}` }}>
+              {circuito.nombre}
+            </Link>
+          </h5>
           <p className="card-text" style={this.StyleLongitud()}>
             {circuito.longitud} metros
           </p>
