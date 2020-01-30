@@ -9,13 +9,11 @@ class Pilotos extends Component {
   cat = "MotoGP";
 
   state = {
-    pilotos: [],
-    categorias: []
+    pilotos: []
   };
 
   componentDidMount() {
     this.filtrar(this.cat);
-    this.setState({ categorias: categoriasData });
   }
 
   async filtrar(categoria) {
@@ -36,7 +34,7 @@ class Pilotos extends Component {
         <h1>{this.state.pilotos.length} Pilotos</h1>
         <hr />
         <ul className="nav nav-pills">
-          {this.state.categorias.map((categoria, index) => (
+          {categoriasData.map((categoria, index) => (
             <li className="nav-item" key={index}>
               <a
                 href="false"

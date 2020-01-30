@@ -36,6 +36,27 @@ class PilotoFicha extends Component {
       edad: data.edad,
       equipo: data.equipo
     });
+    /*
+    fetch(`http://localhost:8080/api/mostrarPiloto.php?id=${pilotoId}`)
+      .then(response => {
+        const data = response.json();
+
+        this.setState({
+          id: pilotoId,
+          imagen: data.imagen,
+          nombre: data.nombre,
+          apellido: data.apellido,
+          dorsal: data.dorsal,
+          fecha: data.fecha,
+          pais: data.pais,
+          edad: data.edad,
+          equipo: data.equipo
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+*/
   }
 
   render() {
