@@ -1,39 +1,46 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import Circuito from "./Circuito";
-import circuitosData from "../../data/circuitos.json";
 
-class Circuitos extends Component {
-  state = {
-    circuitos: []
+const Circuitos = () => {
+  const [personajes, setPersonajes] = useState({ results: [] });
+  const [query, setQuery] = useState("");
+
+  const searchCharacters = async () => {
+    const res = await axios(
+      `https://rickandmortyapi.com/api/character/?name=${query}`
+    );
+    setPersonajes(res.data);
   };
 
-  async componentDidMount() {
-    // HTTP
-    //const res = await fetch('http://localhost:8080/api/obtenerCircuitos.php')
-    //const data = await res.json();
+  useEffect(() => {
+    searchCharacters();
+  });
 
-    // JSON
-    const data = await circuitosData;
-
-    this.setState({ circuitos: data });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>{this.state.circuitos.length} Circuitos</h1>
-        <hr />
-        <div className="row row-cols-1 row-cols-md-4">
-          {this.state.circuitos.map(circuito => (
-            <div className="col mb-3" key={circuito.id}>
-              <Circuito circuito={circuito} />
-            </div>
-          ))}
-        </div>
+  return (
+    <div>
+      <h1>{personajes.results.length} Personajes</h1>
+      <hr />
+      <form>
+        <input
+          value={query}
+          type="text"
+          className="form-control"
+          onChange={e => setQuery(e.target.value)}
+          placeholder="filtrar"
+        />
+      </form>
+      <br />
+      <div className="row row-cols-1 row-cols-md-4">
+        {personajes.results.map((personaje, index) => (
+          <div className="col mb-3" key={index}>
+            <Circuito personaje={personaje} />
+          </div>
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Circuitos;

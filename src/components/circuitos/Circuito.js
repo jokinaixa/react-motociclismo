@@ -1,42 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import "./Circuito.scss";
 
-class Circuito extends Component {
-  StyleLongitud() {
-    return {
-      color: this.props.circuito.longitud > 5100 ? "green" : "red"
-    };
-  }
-
-  render() {
-    const { circuito } = this.props;
-
-    return (
-      <div className="card">
-        <img
-          src={circuito.imagen}
-          alt={circuito.nombre}
-          className="card-img-top"
-        />
-        <div className="card-body">
-          <h5 className="card-title">
-            <Link to={{ pathname: `/clasificaciones/${circuito.id}` }}>
-              {circuito.nombre}
-            </Link>
-          </h5>
-          <p className="card-text" style={this.StyleLongitud()}>
-            {circuito.longitud} metros
-          </p>
-        </div>
+const Circuito = ({ personaje }) => {
+  return (
+    <div className="card">
+      <img
+        src={personaje.image}
+        alt={personaje.name}
+        className="card-img-top"
+      />
+      <div className="card-body">
+        <Link to={{ pathname: `/circuitoFicha/${personaje.id}` }}>
+          {personaje.name}
+        </Link>
       </div>
-    );
-  }
-}
-
-Circuito.propType = {
-  circuito: PropTypes.object.isRequired
+    </div>
+  );
 };
 
 export default Circuito;

@@ -5,11 +5,13 @@ import "./App.scss";
 import Cabecera from "./components/Cabecera";
 import Home from "./components/Home";
 import Circuitos from "./components/circuitos/Circuitos";
+import CircuitoFicha from "./components/circuitos/CircuitoFicha";
 import Equipos from "./components/equipos/Equipos";
 import EquipoFicha from "./components/equipos/EquipoFicha";
 import Pilotos from "./components/pilotos/Pilotos";
 import PilotoFicha from "./components/pilotos/PilotoFicha";
 import Tareas from "./components/tareas/Tareas";
+import Hooks from "./components/hooks/RandomPokemon";
 
 class App extends Component {
   render() {
@@ -19,11 +21,13 @@ class App extends Component {
           <Route path="/" component={Cabecera} />
           <Route path="/home" component={Home} />
           <Route path="/circuitos" component={Circuitos} />
+          <Route path="/circuitoFicha/:idPersonaje" component={CircuitoFicha} />
           <Route path="/equipos" component={Equipos} />
           <Route path="/equipoFicha/:equipoId" component={EquipoFicha} />
           <Route path="/pilotos" component={Pilotos} />
           <Route path="/pilotoFicha/:pilotoId" component={PilotoFicha} />
           <Route path="/clasificaciones/:circuito" component={Tareas} />
+          <Route path="/hooks" component={Hooks} />
         </Router>
       </div>
     );
