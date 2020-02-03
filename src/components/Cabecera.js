@@ -22,18 +22,13 @@ class Cabecera extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/circuitos" className="nav-link">
-                Circuitos
+              <Link to="/personajes" className="nav-link">
+                Personajes
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/equipos" className="nav-link">
-                Equipos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/pilotos" className="nav-link">
-                Pilotos
+              <Link to="/lugares" className="nav-link">
+                Lugares
               </Link>
             </li>
             <li className="nav-item">

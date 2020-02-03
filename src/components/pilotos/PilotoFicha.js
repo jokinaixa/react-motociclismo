@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./PilotoFicha.scss";
 
-import Equipo from "../equipos/Equipo";
+//import Equipo from "../equipos/Equipo";
 import Piloto from "./Piloto";
 
 class PilotoFicha extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class CircuitosCombo extends Component {
+export default class PersonajesCombo extends Component {
   render() {
     return (
       <select

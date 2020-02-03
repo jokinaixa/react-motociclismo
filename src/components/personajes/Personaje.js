@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Circuito = ({ personaje }) => {
+const Personaje = ({ personaje }) => {
   return (
     <div className="card">
       <img
@@ -10,7 +10,7 @@ const Circuito = ({ personaje }) => {
         className="card-img-top"
       />
       <div className="card-body">
-        <Link to={{ pathname: `/circuitoFicha/${personaje.id}` }}>
+        <Link to={{ pathname: `/personajeFicha/${personaje.id}` }}>
           {personaje.name}
         </Link>
       </div>
@@ -18,4 +18,4 @@ const Circuito = ({ personaje }) => {
   );
 };
 
-export default Circuito;
+export default Personaje;

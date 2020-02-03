@@ -4,13 +4,11 @@ import "./App.scss";
 
 import Cabecera from "./components/Cabecera";
 import Home from "./components/Home";
-import Circuitos from "./components/circuitos/Circuitos";
-import CircuitoFicha from "./components/circuitos/CircuitoFicha";
-import Equipos from "./components/equipos/Equipos";
-import EquipoFicha from "./components/equipos/EquipoFicha";
-import Pilotos from "./components/pilotos/Pilotos";
-import PilotoFicha from "./components/pilotos/PilotoFicha";
-import Tareas from "./components/tareas/Tareas";
+import Personajes from "./components/personajes/Personajes";
+import PersonajeFicha from "./components/personajes/PersonajeFicha";
+import Lugares from "./components/lugares/Lugares";
+import LugarFicha from "./components/lugares/LugarFicha";
+import EpisodioFicha from "./components/episodios/EpisodioFicha";
 import Hooks from "./components/hooks/RandomPokemon";
 
 class App extends Component {
@@ -20,13 +18,14 @@ class App extends Component {
         <Router>
           <Route path="/" component={Cabecera} />
           <Route path="/home" component={Home} />
-          <Route path="/circuitos" component={Circuitos} />
-          <Route path="/circuitoFicha/:idPersonaje" component={CircuitoFicha} />
-          <Route path="/equipos" component={Equipos} />
-          <Route path="/equipoFicha/:equipoId" component={EquipoFicha} />
-          <Route path="/pilotos" component={Pilotos} />
-          <Route path="/pilotoFicha/:pilotoId" component={PilotoFicha} />
-          <Route path="/clasificaciones/:circuito" component={Tareas} />
+          <Route path="/personajes" component={Personajes} />
+          <Route
+            path="/personajeFicha/:idPersonaje"
+            component={PersonajeFicha}
+          />
+          <Route path="/lugares" component={Lugares} />
+          <Route path="/lugarFicha/:idLugar" component={LugarFicha} />
+          <Route path="/episodioFicha/:idEpisodio" component={EpisodioFicha} />
           <Route path="/hooks" component={Hooks} />
         </Router>
       </div>

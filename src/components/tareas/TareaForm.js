@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Equipo from "../equipos/Equipo";
+//import Equipo from "../equipos/Equipo";
 //import CategoriasCombo from "../CategoriasCombo";
 //import PilotosCombo from "../pilotos/PilotosCombo";
 
