@@ -24,7 +24,7 @@ export async function getLugar(idLugar) {
   }
 }
 
-export async function getLugareByUrl(url) {
+export async function getLugarByUrl(url) {
   try {
     const response = await axios({
       url: `${url}`,

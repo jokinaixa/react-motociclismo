@@ -4,9 +4,11 @@ const baseUrl = "https://rickandmortyapi.com/api";
 //const baseUrl = process.env.REACT_APP_BASE_URL;
 
 export async function getPersonajes(query, gender) {
+  const customGender = gender === "All" ? "" : gender;
+
   try {
     const response = await axios({
-      url: `${baseUrl}/character/?name=${query}&gender=${gender}`,
+      url: `${baseUrl}/character/?name=${query}&gender=${customGender}`,
       method: "GET"
     });
     return response;

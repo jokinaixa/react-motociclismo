@@ -6,9 +6,9 @@ import Personaje from "./Personaje";
 const Personajes = () => {
   const [personajes, setPersonajes] = useState({ results: [] });
   const [query, setQuery] = useState("");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("All");
 
-  const genderData = ["female", "male", "genderless", "unknown"];
+  const genderData = ["All", "female", "male", "genderless", "unknown"];
 
   useEffect(() => {
     async function loadPersonajes(query, gender) {

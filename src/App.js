@@ -14,20 +14,25 @@ import Hooks from "./components/hooks/RandomPokemon";
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Router>
-          <Route path="/" component={Cabecera} />
-          <Route path="/home" component={Home} />
-          <Route path="/personajes" component={Personajes} />
-          <Route
-            path="/personajeFicha/:idPersonaje"
-            component={PersonajeFicha}
-          />
-          <Route path="/lugares" component={Lugares} />
-          <Route path="/lugarFicha/:idLugar" component={LugarFicha} />
-          <Route path="/episodioFicha/:idEpisodio" component={EpisodioFicha} />
-          <Route path="/hooks" component={Hooks} />
-        </Router>
+      <div>
+        <div className="container">
+          <Router>
+            <Route path="/" component={Cabecera} />
+            <Route path="/home" component={Home} />
+            <Route path="/personajes" component={Personajes} />
+            <Route
+              path="/personajeFicha/:idPersonaje"
+              component={PersonajeFicha}
+            />
+            <Route path="/lugares" component={Lugares} />
+            <Route path="/lugarFicha/:idLugar" component={LugarFicha} />
+            <Route
+              path="/episodioFicha/:idEpisodio"
+              component={EpisodioFicha}
+            />
+            <Route path="/hooks" component={Hooks} />
+          </Router>
+        </div>
       </div>
     );
   }
