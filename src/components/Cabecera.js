@@ -32,6 +32,11 @@ class Cabecera extends Component {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/productos" className="nav-link">
+                Productos
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/hooks" className="nav-link">
                 Hooks
               </Link>

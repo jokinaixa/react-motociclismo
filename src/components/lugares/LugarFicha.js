@@ -31,7 +31,6 @@ const LugarFicha = props => {
           <dl className="row">
             <dt className="col-4">Type</dt>
             <dd className="col-8">{lugar.type}</dd>
-
             <dt className="col-4">Dimension</dt>
             <dd className="col-8">{lugar.dimension}</dd>
           </dl>

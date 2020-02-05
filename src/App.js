@@ -9,6 +9,7 @@ import PersonajeFicha from "./components/personajes/PersonajeFicha";
 import Lugares from "./components/lugares/Lugares";
 import LugarFicha from "./components/lugares/LugarFicha";
 import EpisodioFicha from "./components/episodios/EpisodioFicha";
+import Productos from "./components/productos/Productos";
 import Hooks from "./components/hooks/RandomPokemon";
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
               path="/episodioFicha/:idEpisodio"
               component={EpisodioFicha}
             />
+            <Route path="/productos" component={Productos} />
             <Route path="/hooks" component={Hooks} />
           </Router>
         </div>
