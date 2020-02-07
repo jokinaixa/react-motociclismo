@@ -3,6 +3,8 @@ import { getPersonajes } from "./services";
 
 import Personaje from "./Personaje";
 
+import peliculas from "../../data/prueba.json";
+
 const Personajes = () => {
   const [personajes, setPersonajes] = useState({ results: [] });
   const [query, setQuery] = useState("");

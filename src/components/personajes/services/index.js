@@ -40,3 +40,15 @@ export async function getPersonajeByUrl(url) {
     console.log(e);
   }
 }
+
+export async function getPelicular(url) {
+  try {
+    const response = await axios({
+      url: `${url}`,
+      method: "GET"
+    });
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
